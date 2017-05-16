@@ -1,0 +1,21 @@
+# This will be add/multiply given any input that the user wants to add.
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(void)
+{
+  int ku1, ku2, kuresult;
+  printf ("Hello!\n");
+  printf ("Enter two integers\n");
+  scanf("%d %d, &ku1, &ku2); // When inserting an integer, ku1 and ku2 will act as variables
+  __asm__
+  {
+    "add %[kuresult], %[ku1], %[ku2]\n\t" //Adds the two variables and stores into hthe result
+    : [kuresult] "=&r" (kuresult) 
+    : [ku1] "r" (ku1), [ku2] "r" (ku2)
+  };
+  printf("integer sum in decimal format of the two numbers are equal to: %d \n", kuresult);
+  return 0;
+  }
+  
