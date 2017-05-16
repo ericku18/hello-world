@@ -6,7 +6,6 @@
 #include <iostream>
 int main(void)
 {
-    char filler;    //filler is just a character
     char ku1, ku2;   // ku1 and ku2 are characters
     short ku3, ku4;  // ku3 and ku4 are short integers
     _asm_              // This is the syntax to allow users to manipulate asm into c++
@@ -16,11 +15,26 @@ int main(void)
       "mov %[ku1], r0\n\t"    //store the register values into variable ku1
       "mov %[ku2], r1\n\t"
       "mov %[ku3], r1\n\t"
-      mov %[ku3], r0"
+      mov %[ku4], r0"
       : [ku1] "=&r" (ku1), [ku2] "=&r" (ku2), [ku3] "=&r" (ku3), [ku4] "=&r" (ku4) //This allows characters and shorts to become variables
 };
 printf("r1 = %c, r0 = %c, r5 = %x\%x\n", ku2, ku1, ku3, ku4);      //Printing out the output once switched
 printf("r1 = %x, r0 = %x, r5 = %x\%x\n", ku2, ku1, ku3, ku4);
+
+ _asm_              // This is where the switch/swap begins. Take a look at the letters.
+    {
+      "mov r0, #'A'\n\t"      //move variable a into register 0
+      "mov r1, #'a'\n\t"
+      "mov %[ku1], r0\n\t"    //store the register values into variable ku1
+      "mov %[ku2], r1\n\t"
+      "mov %[ku3], r1\n\t"
+      mov %[ku4], r0"
+      : [ku1] "=&r" (ku1), [ku2] "=&r" (ku2), [ku3] "=&r" (ku3), [ku4] "=&r" (ku4) //This allows characters and shorts to become variables
+};
+std::cout << "After swapping" << std:: endl;
+printf("r1 = %c, r0 = %c, r5 = %x\%x\n", ku2, ku1, ku3, ku4);      //Printing out the output once switched
+printf("r1 = %x, r0 = %x, r5 = %x\%x\n", ku2, ku1, ku3, ku4);
+
 
 return 0;
 }
