@@ -1,4 +1,5 @@
 # Hello Again! This will be the code when creating a switching format in relations to ascii format. This means alphabet letters such as a,b,c will have specific numbers given.
+# Create a nano file and call it whatever name. For example: nano filename1.cpp (cpp because this uses assembly and c++)
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -38,3 +39,12 @@ printf("r1 = %x, r0 = %x, r5 = %x\%x\n", ku2, ku1, ku3, ku4);
 
 return 0;
 }
+
+
+# As a result, if I was to give 'a' = 61 and 'A' = 41, the first part before swapping is just going to put them together, 4161.
+# Reason being is because the output is saying "Alright. I want you to print out specifically aA. No spaces".
+# After swapping the letters, you'll most likely obtain a reverse order, 6141. Again this is in relation to ascii numbers/letters.
+# I suggest google for a table or chart in the images, there should be an image explaining what to obtain from using those letters.
+
+
+
