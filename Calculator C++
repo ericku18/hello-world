@@ -1,0 +1,20 @@
+#include <iostream>                        //Header Library first two lines
+using namespace std;
+ 
+int main()           //Dealing with a only integers.. Therefore int is being used.
+{
+	int a;    //Our first variable. Notice I did not put any value because we want input from our user.
+	int b;     //Our second variable. Notice I did not put any value because we want input from our user.
+	int sum;    //A place to store our answer once finished
+ 
+	cout << "Enter a number:  \n";              //Prompt the user to input an integer (whole number only positive or negative)
+	cin >> a;       //User inputs an integer
+	cout << "Enter another number: \n";     //Prompt the user to input another integer
+	cin >> b;     //User inputs another integer
+
+	sum = a + b; //Addition of the two user inputs. Other signs include (+,-,*,%)
+	cout << "The sum of these two numbers is " << sum; //Prints out the variable that the answer was stored within
+	system("pause>nul");   //This is used incase the output automatically closes after running 
+	return 0;  //This statement is used to show that the main function can run without any problems
+	
+}
